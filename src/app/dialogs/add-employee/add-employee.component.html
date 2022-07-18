@@ -1,0 +1,102 @@
+<div class="container">
+  <h3 mat-dialog-title class="textStyle">{{ title }}</h3>
+
+  <form class="mat-dialog-content" [formGroup]="form" (submit)="onSubmit()">
+    <div class="form">
+      <mat-form-field color="accent">
+        <input
+          matInput
+          type="text"
+          class="form-control"
+          formControlName="firstName"
+          placeholder="First Name"
+        />
+        <mat-error *ngIf="form.controls['firstName'].errors?.['required']"
+          >First Name is required.</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input
+          matInput
+          class="form-control"
+          formControlName="lastName"
+          placeholder="Last Name"
+        />
+        <mat-error *ngIf="form.controls['lastName'].errors?.['required']"
+          >Last Name is required.</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input
+          matInput
+          class="form-control"
+          formControlName="age"
+          placeholder="Age"
+        />
+        <mat-error *ngIf="form.controls['age'].errors?.['required']"
+          >Age is required.</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input
+          matInput
+          class="form-control"
+          formControlName="experience"
+          placeholder="experience"
+        />
+        <mat-error *ngIf="form.controls['experience'].errors?.['required']"
+          >Experience is required.</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input
+          matInput
+          class="form-control"
+          formControlName="designation"
+          placeholder="Designation"
+        />
+        <mat-error *ngIf="form.controls['designation'].errors?.['required']"
+          >Designation is required.</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input
+          matInput
+          class="form-control"
+          formControlName="salary"
+          placeholder="Salary"
+        />
+        <mat-error *ngIf="form.controls['salary'].errors?.['required']"
+          >Salary is required.</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+      <button
+        mat-button
+        [type]="submit"
+        [disabled]="form.invalid"
+        [mat-dialog-close]="1"
+      >
+        {{ buttonText }}
+      </button>
+      <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+    </div>
+  </form>
+</div>
